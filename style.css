@@ -1,0 +1,264 @@
+:root {
+  /* Button style variables */
+  --btn-text: #6b7280;    /* Slate gray text color for default button state */
+  --btn-hover: #ffc506;   /* Yellow background color used on hover */
+  --btn-radius: 8px;      /* Rounded corners used on hover background */
+}
+
+.invert-white {
+  filter: brightness(0) invert(1);
+}
+
+/* ====== Global Typography ====== */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.display-4 {
+  color: #2c3e50;
+}
+
+/* ====== Code Blocks ====== */
+pre {
+  font-family: 'Inconsolata', monospace;
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  border-left: 4px solid #0d6efd;
+}
+
+/* ====== Accordion Styling ====== */
+.accordion-button:not(.collapsed) {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+}
+
+
+
+.btn {
+  font-size: 17px;              /* Button text size */
+  background: transparent;      /* No background in default state */
+  border: none;                 /* Removes default button border */
+  padding: 1em 1.5em;           /* Space around text for better click area */
+  color: var(--btn-text);       /* Use slate text color */
+  position: relative;           /* Enables use of ::before and ::after absolute elements */
+  transition: 0.5s ease;        /* Smooth transition for hover effects */
+  cursor: pointer;              /* Shows pointer cursor on hover */
+  text-transform: none;         /* Keep button text casing as written */
+  z-index: 1;                   /* Ensures button content appears above pseudo-elements */
+}
+
+.btn::before {
+  content: "";                  /* Empty content for decorative underline */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;                  /* Thin line height for underline */
+  width: 0;                     /* Starts hidden (zero width) */
+  background-color: var(--btn-hover); /* Yellow underline color */
+  transition: 0.5s ease;
+  border-radius: 0;             /* No rounding for underline */
+}
+
+.btn:hover {
+  color: #1e1e2b;               /* Darker text color on hover */
+  transition-delay: 0.5s;       /* Adds delay before text color change */
+}
+
+.btn:hover::before {
+  width: 100%;                  /* Underline expands full width on hover */
+}
+
+.btn::after {
+  content: "";                  /* Background fill effect */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;                    /* Starts collapsed */
+  width: 100%;
+  background-color: var(--btn-hover); /* Yellow fill */
+  transition: 0.4s ease;
+  z-index: -1;                  /* Appears behind text */
+  /* Rounded corners only on top for visual lift effect */
+  border-top-left-radius: var(--btn-radius);
+  border-top-right-radius: var(--btn-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.btn:hover::after {
+  height: 100%;                 /* Background grows to fill entire button */
+  transition-delay: 0.4s;       /* Starts growing after slight delay */
+}
+
+/* Utility class for scroll/reveal animations */
+.animate-fade-up {
+  opacity: 0;                   /* Start invisible */
+  transform: translateY(40px);  /* Start shifted downward */
+  will-change: transform, opacity; /* Hint to browser for smoother animation */
+}
+
+
+
+/* =============================== */
+/* ✅ LAYOUT + FORM WRAPPERS      */
+/* =============================== */
+.hero-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f8f9fa;
+}
+
+.hero-section__container {
+  border-radius: 0.5rem;
+  padding: 2rem;
+  border: 1px solid #fff5ff;
+  background: linear-gradient(
+    90deg,
+    #ffffff 50%,
+    #fff9e0,
+    #f3cced,
+    #dfcefc,
+    #f0ccf0
+  );
+}
+
+.hero-section__tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #ffe380;
+  display: inline-block;
+}
+
+
+
+/* =============================== */
+/* ✅ FORM MODULE: SMART NOTIFY   */
+/* =============================== */
+[data-notify] {
+  font-family: system-ui, sans-serif;
+  max-width: 500px;
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+[data-notify] .notify-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: stretch;
+}
+
+[data-notify] .notify-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+[data-notify] .notify-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 16px;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  color: #000;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  line-height: 42px;
+}
+
+[data-notify] .notify-input::placeholder {
+  color: #9ca3af;
+}
+
+[data-notify] .notify-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+[data-notify] .notify-button {
+  height: 42px;
+  padding: 0 24px;
+  font-size: 16px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 42px;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-notify] .notify-button.loading {
+  color: transparent;
+}
+
+[data-notify] .notify-button.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+[data-notify] .notify-error {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 4px;
+  text-align: left;
+}
+
+[data-notify] .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+[data-notify] .overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+[data-notify] .success-message {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 24px 40px;
+  border-radius: 16px;
+  font-size: 18px;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+
