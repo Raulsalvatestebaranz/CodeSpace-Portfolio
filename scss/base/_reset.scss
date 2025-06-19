@@ -1,0 +1,19 @@
+// _reset.scss
+
+/* ================================
+   BASE STYLES
+================================ */
+html {
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.5;
+}
