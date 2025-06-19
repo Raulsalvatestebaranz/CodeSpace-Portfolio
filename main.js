@@ -139,3 +139,46 @@
     });
   });
 })();
+
+
+/* ============================================================= */
+/* SECTION: Splide Slider Initialization                         */
+/* ============================================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ============================ */
+  /* SUBSECTION – Navigation Slider Setup */
+  /* ============================ */
+  const navSlider = new Splide('.fr-slider-nav-indigo', {
+    type: 'slide',
+    rewind: true,
+    fixedWidth: 'fit-content',
+    height: '50vh',
+    isNavigation: true,
+    gap: 'calc(var(--grid-gap)/2)',
+    focus: '1',
+    pagination: false,
+    arrows: false,
+  });
+
+  /* ============================ */
+  /* SUBSECTION – Main Slider Setup */
+  /* ============================ */
+  const mainSlider = new Splide('.fr-slider-main-indigo', {
+    type: 'slide',
+    rewind: true,
+    height: '50vh',
+    gap: 'var(--grid-gap)',
+    pagination: false,
+    arrows: false,
+  });
+
+  /* ============================ */
+  /* SUBSECTION – Sync Navigation */
+  /* ============================ */
+  mainSlider.sync(navSlider);
+
+  navSlider.mount();
+  mainSlider.mount();
+});
