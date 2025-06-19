@@ -1,0 +1,11 @@
+/* ================================
+   MAIN PREVIEW AREA
+================================ */
+.layout__main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
