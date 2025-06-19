@@ -1,0 +1,11 @@
+
+
+// =============================================================
+// 🔽 ACCORDION COMPONENT OVERRIDES
+// -------------------------------------------------------------
+// Custom styling for expanded accordion panels to enhance visibility.
+// =============================================================
+.accordion-button:not(.collapsed) {
+  background-color: #e7f1ff;
+  color: #0d6efd;
+}
