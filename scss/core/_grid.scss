@@ -1,0 +1,60 @@
+// =============================================================
+// 📦 COMPONENT: FLEXIBLE GRID PLAYGROUND
+// -------------------------------------------------------------
+// Responsive flex container with demo items. Used for layout
+// testing, prototyping, or visual grid representation.
+// =============================================================
+
+
+// 🔹 FLEX CONTAINER: Responsive Grid Wrapper
+.playground-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  border: 2px dashed #666;
+  background: #fff;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  justify-content: center;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  overflow-x: auto;
+}
+// 🔹 End container styles --------------------------------------->
+
+
+// 🔹 FLEX ITEM: Colored Demo Blocks
+.playground-box__item {
+  flex: 0 1 min(120px, 22%);
+  min-height: 60px;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+  color: #000;
+  background-color: transparent;
+  border: 2px dashed #999;
+  max-width: 100%;
+  flex-shrink: 1;
+  word-wrap: break-word;
+}
+
+// 🔹 ITEM COLORS: First 6 boxes get unique colors
+.playground-box__item:nth-child(1) { border-color: #e74c3c; }  // Red
+.playground-box__item:nth-child(2) { border-color: #3498db; }  // Blue
+.playground-box__item:nth-child(3) { border-color: #f39c12; }  // Orange
+.playground-box__item:nth-child(4) { border-color: #2ecc71; }  // Green
+.playground-box__item:nth-child(5) { border-color: #9b59b6; }  // Purple
+.playground-box__item:nth-child(6) { border-color: #1abc9c; }  // Teal
+
+// 🔹 HOVER EFFECT
+.playground-box__item:hover {
+  transform: scale(1.05);
+}
+// 🔹 End item styles -------------------------------------------->

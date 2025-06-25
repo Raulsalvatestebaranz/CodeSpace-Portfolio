@@ -1,0 +1,164 @@
+/* ========================================================================================= */
+/* ✅ LAYOUT WRAPPER                                                                         */
+/* ========================================================================================= */
+.app {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.app__title {
+  font-size: var(--font-size-heading);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.app__actions {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-m);
+}
+
+/* ========================================================================================= */
+/* ✅ FORM COMPONENT                                                                         */
+/* ========================================================================================= */
+.form {
+  display: flex;
+  justify-content: center;
+  max-width: 600px;
+  margin-inline: auto;
+  gap: var(--space-xs);
+}
+
+.form-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.form__input {
+  flex: 1;
+  padding: var(--space-xs);
+  border-radius: var(--radius);
+  border: 1px solid #ccc;
+}
+
+.form__button {
+  padding: var(--space-s) var(--space-m);
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form__button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ========================================================================================= */
+/* ✅ BASE BUTTON STYLES (used by all buttons)                                               */
+/* ========================================================================================= */
+.button {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem; // ↓ unified height
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  line-height: 1.25;
+}
+
+/* Reuse base styles */
+.form__button,
+.button--random {
+  @extend .button;
+}
+
+/* Specific styles */
+.form__button {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.form__button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.button--random {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+.button--random:hover {
+  background-color: #f57c00;
+}
+
+
+/* ========================================================================================= */
+/* ✅ COCKTAIL CARD GRID                                                                     */
+/* ========================================================================================= */
+.recipes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-l);
+  margin-top: var(--space-xl);
+}
+
+.recipe-item {
+  background-color: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
+
+.recipe-item:hover {
+  transform: translateY(-4px);
+}
+
+.recipe-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-item h3 {
+  padding: var(--space-s);
+  font-size: 1.1rem;
+}
+
+/* ========================================================================================= */
+/* ✅ MESSAGE AREA                                                                           */
+/* ========================================================================================= */
+.message {
+  text-align: center;
+  margin-top: var(--space-m);
+  font-size: 1rem;
+}
+
+.message.error {
+  color: var(--color-error);
+}
+
+.message.loading {
+  color: var(--color-primary);
+}
+
+/* ========================================================================================= */
+/* ✅ ACCESSIBILITY: SCREEN-READER ONLY                                                      */
+/* ========================================================================================= */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

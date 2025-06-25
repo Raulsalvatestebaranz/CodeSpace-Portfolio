@@ -1,0 +1,15 @@
+// =============================================================
+// 📦 CONTAINER COMPONENT – Layout Wrapper for Global Structure
+// -------------------------------------------------------------
+// This component defines the `.layout` wrapper which ensures
+// full viewport height, horizontal overflow protection, and 
+// a consistent background across all pages.
+// =============================================================
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #fff;
+}
+// 🔹 End layout container ------------------------------------->

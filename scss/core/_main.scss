@@ -1,0 +1,18 @@
+// =============================================================
+// 🧱 LAYOUT AREA: MAIN CONTENT WRAPPER
+// -------------------------------------------------------------
+// This defines the main preview area within the layout,
+// typically used to render dynamic or central page content.
+// =============================================================
+
+
+// 🔹 MAIN CONTENT PREVIEW AREA
+.layout__main {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+}
+// 🔹 End main layout section ----------------------------------->

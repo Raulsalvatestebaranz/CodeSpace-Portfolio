@@ -1,0 +1,148 @@
+// =============================================================
+// 💬 COMPONENT: SMART NOTIFY FORM MODULE
+// -------------------------------------------------------------
+// A self-contained form UI for email/newsletter notifications,
+// featuring input field, submit button, error state, loading
+// spinner animation, and success overlay.
+// =============================================================
+
+[data-notify] {
+  font-family: system-ui, sans-serif;
+  max-width: 500px;
+  margin-top: 1rem;
+  width: 100%;
+  position: relative;
+}
+
+// 🔹 Layout: Input and Button Row
+[data-notify] .notify-form {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: stretch;
+}
+
+// 🔹 Input Field Wrapper
+[data-notify] .notify-input-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+// 🔹 Input Styles
+[data-notify] .notify-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 16px;
+  font-size: 16px;
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  color: #000;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  line-height: 42px;
+}
+
+// 🔹 Input Placeholder
+[data-notify] .notify-input::placeholder {
+  color: #9ca3af;
+}
+
+// 🔹 Input Focus State
+[data-notify] .notify-input:focus {
+  outline: none;
+  border-color: #000;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+}
+// 🔹 End input field styles ------------------------------->
+
+
+// 🔹 Submit Button Styles
+[data-notify] .notify-button {
+  height: 42px;
+  padding: 0 24px;
+  font-size: 16px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  line-height: 42px;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+// 🔹 Loading Spinner on Submit Button
+[data-notify] .notify-button.loading {
+  color: transparent;
+}
+
+[data-notify] .notify-button.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin: -10px 0 0 -10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+// 🔹 End button + loading animation ----------------------->
+
+
+// 🔹 Error Message Below Input
+[data-notify] .notify-error {
+  color: #ff4444;
+  font-size: 14px;
+  margin-top: 4px;
+  text-align: left;
+}
+// 🔹 End error message block ------------------------------->
+
+
+// 🔹 Success Overlay Styles
+[data-notify] .overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+[data-notify] .overlay.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+// 🔹 Success Message Box
+[data-notify] .success-message {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 24px 40px;
+  border-radius: 16px;
+  font-size: 18px;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+// 🔹 End overlay + success styles ------------------------->

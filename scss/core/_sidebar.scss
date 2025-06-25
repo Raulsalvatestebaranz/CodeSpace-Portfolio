@@ -1,0 +1,86 @@
+// =============================================================
+// 📚 SIDEBAR COMPONENT – Layout & Filters Panel
+// -------------------------------------------------------------
+// This component defines the left sidebar used in grid-based layouts.
+// It contains headings, filter controls, and a reset button.
+// =============================================================
+
+.layout__sidebar {
+  width: 320px;
+  padding: 2rem 1.5rem;
+  border-right: 1px solid #ddd;
+  background-color: #ffffff;
+}
+
+// 🔹 Sidebar Section Headings
+.layout__sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a73e8;
+}
+
+// 🔹 Sidebar Paragraph Text
+.layout__sidebar p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+// 🔹 Control Group Wrapper (for filters and selectors)
+.control-group {
+  margin-bottom: 2rem;
+}
+
+// 🔹 Control Group Titles
+.control-group__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #1a73e8;
+}
+
+// 🔹 Label Styling for Form Controls
+label.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+// 🔹 Inputs & Select Dropdowns
+select,
+input[type="number"] {
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  transition: border 0.2s ease;
+}
+
+// 🔹 Focus State Styling
+select:focus,
+input[type="number"]:focus {
+  border-color: #1a73e8;
+  outline: none;
+}
+
+// 🔹 Reset Button Styles
+#resetBtn {
+  padding: 0.5rem 1rem;
+  background: #1a73e8;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.75rem;
+  transition: background 0.2s ease;
+}
+
+// 🔹 Hover State for Reset Button
+#resetBtn:hover {
+  background: #155ab6;
+}
+// 🔹 End of Sidebar Component ------------------------------->

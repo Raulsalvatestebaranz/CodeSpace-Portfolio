@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ SEO: Blog Post Meta -->
+  <title>Post – Cockistry</title>
+  <meta name="description" content="Read this detailed article from the Cockistry blog covering cocktail recipes, techniques, and inspiration." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cockistry" />
+
+  <!-- ✅ SEO: Open Graph for Social Sharing -->
+  <meta property="og:title" content="Post – Cockistry" />
+  <meta property="og:description" content="Read this detailed article from the Cockistry blog covering cocktail recipes, techniques, and inspiration." />
+  <meta property="og:image" content="/images/og-post.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/post.html" />
+  <meta property="og:type" content="article" />
+
+  <!-- ✅ SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Post – Cockistry" />
+  <meta name="twitter:description" content="Read this detailed article from the Cockistry blog covering cocktail recipes, techniques, and inspiration." />
+  <meta name="twitter:image" content="/images/og-post.jpg" />
+
+  <!-- ✅ FONTS: Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@300;400;600;700&family=Roboto:ital@0;1&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@300;400;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet" media="all">
+
+  <!-- ✅ CSS: Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- ✅ CSS: Custom Styles -->
+  <link rel="stylesheet" href="/dist/css/main.css" />
+
+  <!-- ✅ SITE JS: Global Scripts -->
+  <script defer src="/main-gsap.js"></script>           <!-- Animation logic -->
+  <script defer src="main.js"></script>                 <!-- Global site init -->
+  <script defer src="/js/inject-layout.js"></script>    <!-- Layout injector -->
+
+  <!-- ✅ PAGE JS: Post Renderer -->
+  <script type="module" defer src="/js/post.js"></script>
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- Header -->
+  <div id="site-header"></div>
+
+  <!-- Main -->
+  <main class="flex-grow-1">
+    <div class="container py-5" id="post-container">
+      <p class="text-muted">Loading post...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Scripts -->
+  <script defer src="../js/inject-layout.js"></script>
+  <script type="module" defer src="../js/post.js"></script>
+</body>
+</html>

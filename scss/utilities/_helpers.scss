@@ -1,22 +1,33 @@
 // =============================================================
-// 🎛️ Utilities: General Helper Classes
+// 🎛️ HELPERS MODULE – Utility Classes & Responsive Fixes
+// -------------------------------------------------------------
+// General-purpose helpers for visual tweaks, animations, and layout overrides.
 // =============================================================
 
+
+// 🔹 Invert Light Images (e.g., logos on dark backgrounds)
 .invert-white {
   filter: brightness(0) invert(1);
 }
+// 🔹 End Invert ----------------------------------------------->
 
+
+// 🔹 Fade-up Animation Trigger (used with GSAP ScrollTrigger)
 .animate-fade-up {
   opacity: 0;
   transform: translateY(40px);
   will-change: transform, opacity;
 }
+// 🔹 End Animate Fade-up --------------------------------------->
 
 
-/* ================================
-   RESPONSIVE FIXES
-================================ */
+
+// =============================================================
+// 📱 RESPONSIVE FIXES – Layout Adjustments for Small Screens
+// =============================================================
+
 @media (max-width: 768px) {
+  // 🔹 Stack layout column-wise on tablets
   .layout {
     flex-direction: column;
   }
@@ -31,14 +42,17 @@
     padding: 1.5rem;
   }
 
+  // 🔹 Reduce item width in grid layouts
   .playground-box__item {
     flex: 0 1 48%;
   }
 }
 
 @media (max-width: 480px) {
+  // 🔹 Full-width items on small phones
   .playground-box__item {
     flex: 0 1 100%;
     font-size: 0.9rem;
   }
 }
+// 🔹 End Responsive Fixes --------------------------------------->

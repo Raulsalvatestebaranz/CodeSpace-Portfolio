@@ -1,0 +1,45 @@
+// =============================================================
+// 💬 TESTIMONIALS SECTION – Carousel & Card Styles
+// -------------------------------------------------------------
+// This section styles testimonial cards and carousel controls.
+// =============================================================
+
+// 🔹 Card Hover Effect – Adds subtle shadow on hover
+.card {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+// 🔹 End Card Hover ------------------------------------------->
+
+
+// 🔹 Carousel Control Icons (Font Sizing)
+.carousel-control-prev svg,
+.carousel-control-next svg {
+  font-size: 1.5rem;
+}
+
+// 🔹 Carousel Navigation Styling
+.carousel-control-prev,
+.carousel-control-next {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  outline: none;
+  box-shadow: none;
+}
+// 🔹 End Carousel Nav ----------------------------------------->
+
+
+// 🔹 Responsive Adjustments for Mobile (text alignment)
+@media (max-width: 575.98px) {
+  .text-xl-start {
+    text-align: center !important;
+  }
+}
+// 🔹 End Responsive Fix ---------------------------------------->

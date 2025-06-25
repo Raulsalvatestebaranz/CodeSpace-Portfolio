@@ -1,26 +1,23 @@
 // =============================================================
 // 🔧 BASE STYLES
 // =============================================================
-@use 'base/variable';
-@use 'base/reset';
-@use 'base/typography';
-@use 'base/code';
+@use 'base/base';
+
 
 // =============================================================
-// 📐 LAYOUT
+// 🎯 CORE STYLES (Layout + Components + Sections)
 // =============================================================
-@use 'layout/container';
-@use 'layout/grid';
-@use 'layout/hero';
-@use 'layout/sidebar';
-@use 'layout/main';
-@use 'layout/buttons';
-@use 'layout/forms';
-
-// =============================================================
-// 📂 SECTIONS
-// =============================================================
-@use 'sections/slider';
+@use 'core/container';
+@use 'core/grid';
+@use 'core/hero';
+@use 'core/sidebar';
+@use 'core/main';
+@use 'core/buttons';
+@use 'core/forms';
+@use 'core/navbar';
+@use 'core/recipes';
+@use 'core/slider';
+@use 'core/dropdown';
 
 // =============================================================
 // 🛠 UTILITIES
@@ -28,9 +25,3 @@
 @use 'utilities/accordion';
 @use 'utilities/helpers';
 @use 'utilities/spacing';
-
-
-// =============================================================
-// 🛠 COMPONENT
-// =============================================================
-@use 'components/_dropdown.scss';

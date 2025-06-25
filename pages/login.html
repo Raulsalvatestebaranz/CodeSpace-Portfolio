@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ✅ SEO: Meta Tags for Search Engines -->
+  <title>Cockistry | Cocktail Finder</title>
+  <meta name="description" content="Discover top cocktail recipes with Cockistry. Search by ingredients, category, or popularity to mix your perfect drink.">
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Cockistry" />
+
+  <!-- ✅ SEO: Open Graph for Social Sharing -->
+  <meta property="og:title" content="Cockistry | Cocktail Finder" />
+  <meta property="og:description" content="Discover top cocktail recipes with Cockistry. Search by ingredients, category, or popularity to mix your perfect drink." />
+  <meta property="og:image" content="/images/og-cocktail.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- ✅ SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cockistry | Cocktail Finder" />
+  <meta name="twitter:description" content="Discover top cocktail recipes with Cockistry. Search by ingredients, category, or popularity to mix your perfect drink." />
+  <meta name="twitter:image" content="/images/og-cocktail.jpg" />
+
+  <!-- ✅ FONTS: Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@300;400;600;700&family=Roboto:ital@0;1&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata&family=Poppins:wght@300;400;600;700&family=Roboto:ital@0;1&display=swap" rel="stylesheet" media="all">
+
+  <!-- ✅ CSS: Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- ✅ CSS: Custom Styles -->
+  <link rel="stylesheet" href="/dist/css/main.css" />
+
+  <!-- ✅ JS: Vendor Libraries -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/MotionPathPlugin.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollSmoother.min.js"></script>
+
+  <!-- ✅ SITE JS: Global Scripts -->
+  <script defer src="/main-gsap.js"></script>           <!-- Animation logic -->
+  <script defer src="main.js"></script>                 <!-- Global site init -->
+  <script defer src="/js/inject-layout.js"></script>    <!-- Layout injector -->
+
+  <!-- ✅ PAGE JS: Optional Scripts -->
+  <!-- <script type="module" defer src="/js/products.js"></script> --> <!-- Uncomment if needed -->
+</head>
+
+
+<body class="d-flex flex-column min-vh-100">
+
+  <!-- ✅ Injected Header -->
+  <div id="site-header"></div>
+
+  <!-- ✅ MAIN CONTENT -->
+  <main class="flex-grow-1">
+
+<!-- ============================== -->
+<!-- SECTION: product-main -->
+<section class="product-main section py-5 px-3">
+  <div class="container">
+    <div class="row product-main__row gx-5 gy-4 flex-column flex-lg-row">
+
+      <!-- ------------------------------ -->
+      <!-- Product Media -->
+      <div class="col-lg-6 product-main__item">
+        <div class="product-main__media bg-light p-3 rounded">
+          <img src="/images/ProCook-Stovetop-Sandwich-Toaster-6766 (1).png" alt="Product view" class="img-fluid rounded">
+        </div>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- Product Content -->
+      <div class="col-lg-6 product-main__item d-flex flex-column gap-3">
+
+        <!-- Tags -->
+        <div class="product-main__tags text-muted small">
+          <span class="badge bg-secondary me-2">Limited Edition</span>
+          <span class="badge bg-secondary">New Arrival</span>
+        </div>
+
+        <!-- Sale Badge -->
+        <div class="product-main__badge badge bg-gradient text-white">
+          WINTER DEAL
+        </div>
+
+        <!-- Product Title -->
+        <h1 class="product-main__title h2 fw-medium">
+          Horizon Glow Sneakers
+        </h1>
+
+        <!-- Pricing -->
+        <div class="product-main__pricing d-flex align-items-end gap-2">
+          <span class="product-main__price h4 fw-semibold">$89.99</span>
+          <span class="product-main__price--strikethrough text-muted text-decoration-line-through">$129.99</span>
+        </div>
+
+        <!-- Description -->
+        <p class="product-main__desc text-muted">
+          Eye-catching sneakers with gradient detailing and all-day comfort.
+        </p>
+
+        <!-- Variants -->
+        <div class="product-main__variants d-flex gap-2">
+          <button class="btn btn-outline-secondary btn-sm">Red</button>
+          <button class="btn btn-outline-secondary btn-sm">Blue</button>
+          <button class="btn btn-outline-secondary btn-sm">Green</button>
+        </div>
+
+        <!-- Quantity -->
+        <div class="product-main__quantity">
+          <label for="product-qty" class="form-label">Quantity</label>
+          <input type="number" id="product-qty" class="form-control" value="1" min="1">
+        </div>
+
+        <!-- Stock Indicator -->
+        <div class="product-main__stock-indicator alert alert-success">
+          In Stock – Ships today!
+        </div>
+
+        <!-- Add to Cart -->
+        <button class="btn btn-dark w-100 product-main__cta">
+          Add to Cart
+        </button>
+
+        <!-- Buy Now -->
+        <button class="btn btn-light w-100 product-main__cta">
+          Buy Now
+        </button>
+
+        <!-- FAQ or Accordion -->
+        <div class="product-main__faq accordion" id="accordionFaq">
+          <!-- Insert FAQ accordion items here if needed -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============================== -->
+<!-- SECTION: guarantee-benefits -->
+<section class="guarantee-benefits section py-5 px-3">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 guarantee-benefits__row">
+      
+      <!-- ------------------------------ -->
+      <!-- 30 Day Returns -->
+      <div class="col guarantee-benefits__item p-4 bg-light rounded position-relative">
+        <div class="guarantee-benefits__icon-wrapper bg-white p-3 rounded-circle mb-3">
+          <i class="ion-ios-refresh fs-3 text-primary"></i>
+        </div>
+        <p class="guarantee-benefits__title fw-medium fs-5 mb-2">30 Day Returns</p>
+        <p class="guarantee-benefits__desc text-muted mb-0">
+          Enjoy hassle-free return with our 30-day policy for peace of mind.
+        </p>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- Next Day Delivery -->
+      <div class="col guarantee-benefits__item p-4 bg-light rounded position-relative">
+        <div class="guarantee-benefits__icon-wrapper bg-white p-3 rounded-circle mb-3">
+          <i class="ion-ios-flash fs-3 text-primary"></i>
+        </div>
+        <p class="guarantee-benefits__title fw-medium fs-5 mb-2">Next Day Delivery</p>
+        <p class="guarantee-benefits__desc text-muted mb-0">
+          Get your order delivered fast with our reliable next-day delivery service.
+        </p>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- International Shipping -->
+      <div class="col guarantee-benefits__item p-4 bg-light rounded position-relative">
+        <div class="guarantee-benefits__icon-wrapper bg-white p-3 rounded-circle mb-3">
+          <i class="ti-world fs-3 text-primary"></i>
+        </div>
+        <p class="guarantee-benefits__title fw-medium fs-5 mb-2">International Shipping</p>
+        <p class="guarantee-benefits__desc text-muted mb-0">
+          Shop from anywhere with convenient worldwide shipping.
+        </p>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- 0% Finance Available -->
+      <div class="col guarantee-benefits__item p-4 bg-light rounded position-relative">
+        <div class="guarantee-benefits__icon-wrapper bg-white p-3 rounded-circle mb-3">
+          <i class="ti-credit-card fs-3 text-primary"></i>
+        </div>
+        <p class="guarantee-benefits__title fw-medium fs-5 mb-2">0% Finance Available</p>
+        <p class="guarantee-benefits__desc text-muted mb-0">
+          Spread the cost of your purchase with 0% interest finance plans.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SECTION: highlight-vibrant -->
+<section class="highlight-vibrant section py-5 px-3">
+  <div class="container">
+    <div class="row align-items-center gy-5 gx-5">
+      
+      <!-- ------------------------------ -->
+      <!-- Image -->
+      <div class="col-md-6 highlight-vibrant__item order-md-2">
+        <figure class="highlight-vibrant__image-wrapper mb-0">
+          <img src="https://bricksfusion.com/wp-content/uploads/2024/12/4-1024x1024.avif" alt="Gradient sneaker side view" class="img-fluid rounded" loading="lazy">
+        </figure>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- Text Content -->
+      <div class="col-md-6 highlight-vibrant__item">
+        <h2 class="highlight-vibrant__title fw-medium display-6 mb-3">
+          Vibrant design that will turn heads
+        </h2>
+        <p class="highlight-vibrant__desc text-muted fs-5">
+          The Horizon Glow Sneakers feature a stunning gradient finish that seamlessly blends bold colors for a look that stands out. Perfect for those who want to make a statement, these sneakers bring style and personality to every step you take.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SECTION: highlight-comfort -->
+<section class="highlight-comfort section py-5 px-3">
+  <div class="container">
+    <div class="row align-items-center gy-5 gx-5">
+      
+      <!-- ------------------------------ -->
+      <!-- Text Content -->
+      <div class="col-md-6 highlight-comfort__item">
+        <h2 class="highlight-comfort__title fw-medium display-6 mb-3">
+          Unmatched comfort for all-day wear
+        </h2>
+        <p class="highlight-comfort__desc text-muted fs-5">
+          The Horizon Glow Sneakers feature a stunning gradient finish that seamlessly blends bold colors for a look that stands out. Perfect for those who want to make a statement, these sneakers bring style and personality to every step you take.
+        </p>
+      </div>
+
+      <!-- ------------------------------ -->
+      <!-- Image -->
+      <div class="col-md-6 highlight-comfort__item">
+        <figure class="highlight-comfort__image-wrapper mb-0">
+          <img src="https://bricksfusion.com/wp-content/uploads/2024/12/5-1024x1024.avif" alt="Sneaker interior cushioning" class="img-fluid rounded" loading="lazy">
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SECTION: showcase-video -->
+<section class="showcase-video section py-5 px-3">
+  <div class="container">
+    <!-- ------------------------------ -->
+    <div class="showcase-video__wrapper position-relative overflow-hidden rounded" style="height: 600px;">
+      <video class="showcase-video__video w-100 h-100 object-fit-cover" autoplay muted loop playsinline poster="https://bricksfusion.com/wp-content/uploads/2024/12/8.mp4">
+        <source src="https://bricksfusion.com/wp-content/uploads/2024/12/8.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="showcase-video__overlay position-absolute top-50 start-50 translate-middle text-center px-4">
+        <h2 class="showcase-video__title text-white fw-medium display-6">
+          Showcase your products in action and outline their benefits.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== -->
+<!-- SECTION: showcase-video -->
+<section class="showcase-video section py-5 px-3">
+  <div class="container">
+    <!-- ------------------------------ -->
+    <div class="showcase-video__wrapper position-relative overflow-hidden rounded" style="height: 600px;">
+      <iframe
+        class="showcase-video__iframe w-100 h-100"
+        src="https://www.youtube.com/embed/1_dZRHB4QWs?autoplay=1&mute=1&loop=1&playlist=1_dZRHB4QWs&controls=0&modestbranding=1&playsinline=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div class="showcase-video__overlay position-absolute top-50 start-50 translate-middle text-center px-4">
+        <h2 class="showcase-video__title text-white fw-medium display-6">
+          Showcase your products in action and outline their benefits.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+</main>
+  
+<!-- ✅ Injected Footer -->
+<div id="site-footer"></div>
+
+</body>
+</html>
