@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  injectLayout("/pages/layouts/layout.html").catch(err => {
+  const isInPagesFolder = window.location.pathname.includes("/pages/");
+  const layoutPath = isInPagesFolder ? "../layouts/layout.html" : "pages/layouts/layout.html";
+
+  injectLayout(layoutPath).catch(err => {
     console.error("❌ Layout injection failed:", err);
   });
 });
+
 
 async function injectLayout(url) {
   const res = await fetch(url);
