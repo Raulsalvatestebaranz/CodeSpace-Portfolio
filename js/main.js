@@ -14,7 +14,6 @@
       const targetEmail = container.getAttribute('data-notify-email') || 'test@test.com';
       if (!targetEmail) return;
 
-      /* ✅ Inject Form UI */
       container.innerHTML = `
         <form class="notify-form" novalidate>
           <div class="notify-input-wrapper">
@@ -34,7 +33,6 @@
       const overlay = container.querySelector('.overlay');
       let isSubmitting = false;
 
-      /* ✅ Handle Form Submission */
       form.addEventListener('submit', async function (e) {
         e.preventDefault();
         if (isSubmitting) return;
@@ -90,14 +88,12 @@
       if (container.hasAttribute('data-circles-initialized')) return;
       container.setAttribute('data-circles-initialized', 'true');
 
-      /* ✅ Sample Avatar Images */
       const avatars = [
         "https://library.bricksfusion.com/wp-content/uploads/2025/05/66303513e76c9555d5583b13_Customer-Avatar-01.png",
         "https://library.bricksfusion.com/wp-content/uploads/2025/05/66303513e76c9555d5583b12_Customer-Avatar-03.png",
         "https://library.bricksfusion.com/wp-content/uploads/2025/05/66303513e76c9555d5583b10_Customer-Avatar-02.png"
       ];
 
-      /* ✅ Render Avatar Stack */
       avatars.forEach((src, i) => {
         const link = document.createElement('a');
         link.href = "#";
@@ -117,7 +113,6 @@
         container.appendChild(link);
       });
 
-      /* ✅ Display "+24K" Label */
       const extra = document.createElement('span');
       extra.textContent = "24K+";
       extra.style.marginLeft = "8px";
@@ -146,7 +141,6 @@
 
     let x = 0, y = 0;
 
-    /* ✅ Mousemove Interaction */
     container.addEventListener('mousemove', e => {
       const rect = container.getBoundingClientRect();
       const offsetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -156,7 +150,6 @@
       image.style.transform = `translate(${x}px, ${y}px) scale(1.05)`;
     });
 
-    /* ✅ Reset on Mouse Leave */
     container.addEventListener('mouseleave', () => {
       image.style.transform = 'translate(0, 0) scale(1)';
     });
@@ -167,37 +160,36 @@
 /* ============================================================= */
 /* SECTION: Splide Carousel – Main + Nav Sync                    */
 /* ============================================================= */
-document.addEventListener('DOMContentLoaded', function () {
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof Splide === 'undefined') {
+      console.warn('⚠️ Splide is not loaded. Carousel not initialized.');
+      return;
+    }
 
-  /* ============================ */
-  /* SUBSECTION – Navigation Slider Setup */
-  const navSlider = new Splide('.fr-slider-nav-indigo', {
-    type: 'slide',
-    rewind: true,
-    fixedWidth: 'fit-content',
-    height: '50vh',
-    isNavigation: true,
-    gap: 'calc(var(--grid-gap)/2)',
-    focus: '1',
-    pagination: false,
-    arrows: false,
+    const navSlider = new Splide('.fr-slider-nav-indigo', {
+      type: 'slide',
+      rewind: true,
+      fixedWidth: 'fit-content',
+      height: '50vh',
+      isNavigation: true,
+      gap: 'calc(var(--grid-gap)/2)',
+      focus: '1',
+      pagination: false,
+      arrows: false,
+    });
+
+    const mainSlider = new Splide('.fr-slider-main-indigo', {
+      type: 'slide',
+      rewind: true,
+      height: '50vh',
+      gap: 'var(--grid-gap)',
+      pagination: false,
+      arrows: false,
+    });
+
+    mainSlider.sync(navSlider);
+    navSlider.mount();
+    mainSlider.mount();
   });
-
-  /* ============================ */
-  /* SUBSECTION – Main Slider Setup */
-  const mainSlider = new Splide('.fr-slider-main-indigo', {
-    type: 'slide',
-    rewind: true,
-    height: '50vh',
-    gap: 'var(--grid-gap)',
-    pagination: false,
-    arrows: false,
-  });
-
-  /* ============================ */
-  /* SUBSECTION – Sync Navigation to Main */
-  mainSlider.sync(navSlider);
-
-  navSlider.mount();
-  mainSlider.mount();
-});
+})();
